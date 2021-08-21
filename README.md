@@ -3,6 +3,10 @@
 
 
 - 🔥 연결 리스트(Linked List)
+  - addFirst
+  - addLast
+  - removeFirst
+  - removeLast
 - 🔥 스택과 큐 
 - 🔥 해시(Hash)
 - 🔥 힙(Heap)
