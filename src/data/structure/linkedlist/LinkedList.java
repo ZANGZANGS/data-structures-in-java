@@ -21,4 +21,11 @@ public class LinkedList<E>  {
 
     }
 
+    public void addFirst(E obj){
+        Node<E> node = new Node<>(obj);
+        node.next = head;
+        head = node;
+        currentSize++;
+    }
+
 }
