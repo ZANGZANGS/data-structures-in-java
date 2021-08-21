@@ -13,19 +13,48 @@ public class LinkedList<E>  {
     }
 
     private Node<E> head;
+    private Node<E> tail;
     private int currentSize;
 
     public LinkedList(){
         head = null;
+        tail = null;
         currentSize = 0;
 
     }
 
     public void addFirst(E obj){
         Node<E> node = new Node<>(obj);
+
+        if(null == head){
+            head = node;
+            tail = node;
+            currentSize++;
+            return;
+        }
+
         node.next = head;
         head = node;
         currentSize++;
     }
 
+    public void addLast(E obj){
+        Node<E> node = new Node<>(obj);
+
+        if(null == head){
+            head = node;
+            tail = node;
+            currentSize++;
+            return;
+        }
+
+        /*Node<E> tmp = head;
+        while(null != tmp.next){
+            tmp = tmp.next;
+        }
+        tmp.next = node;*/
+        tail.next = node;
+        tail = node;
+        currentSize++;
+    }
 }
