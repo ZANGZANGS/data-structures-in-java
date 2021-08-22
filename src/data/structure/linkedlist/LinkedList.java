@@ -68,7 +68,7 @@ public class LinkedList<E>  {
         E tmp= head.data;
 
         //single element
-        if(head == tail ){
+        if(head == tail){
         //if(currentSize == 1 )
         //if(null == head.next )
             head = null;
@@ -80,5 +80,32 @@ public class LinkedList<E>  {
         currentSize--;
         return  tmp;
 
+    }
+
+    public E removeLast(){
+
+        //empty
+        if(null == tail){
+            return null;
+        }
+
+        //single element
+        if(head == tail){
+            return removeFirst();
+        }
+
+        Node<E> previous = null;
+        Node<E> current = head;
+
+        while (current != tail){
+            previous = current;
+            current = current.next;
+        }
+
+        previous.next = null; //GC ?
+        tail = previous;
+        currentSize--;
+
+        return current.data;
     }
 }
