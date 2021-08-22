@@ -57,4 +57,28 @@ public class LinkedList<E>  {
         tail = node;
         currentSize++;
     }
+
+    public E removeFirst(){
+
+        //empty
+        if(null == head){
+            return null;
+        }
+
+        E tmp= head.data;
+
+        //single element
+        if(head == tail ){
+        //if(currentSize == 1 )
+        //if(null == head.next )
+            head = null;
+            tail = null;
+        }else{
+            head = head.next;
+        }
+
+        currentSize--;
+        return  tmp;
+
+    }
 }
