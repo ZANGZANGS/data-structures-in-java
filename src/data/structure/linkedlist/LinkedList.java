@@ -107,5 +107,42 @@ public class LinkedList<E>  {
         return current.data;
     }
 
+    public E remove(E obj){
+        Node<E> previous = null;
+        Node<E> current = head;
+
+        //empty
+        if(null == tail){
+            return null;
+        }
+
+        //single element
+        if(head == tail){
+            removeFirst();
+        }
+
+        while (current != null){
+
+            if(((Comparable<E>)current.data).compareTo(obj)==0){
+                //beginning
+                if(current == head){
+                    return removeFirst();
+                }
+                //end
+                /*if(current == tail){
+                    return removeLast();
+                }*/
+                //middle
+                previous.next = current.next;
+                currentSize--;
+                return  current.data;
+            }
+
+            previous = current;
+            current = current.next;
+        }
+
+        return  null;
+    }
 
 }
