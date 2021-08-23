@@ -145,4 +145,16 @@ public class LinkedList<E>  {
         return  null;
     }
 
+    public boolean contains(E obj){
+        Node<E> current = head;
+
+        while (current != null){
+
+            if(((Comparable<E>)current.data).compareTo(obj)==0){
+               return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
 }
