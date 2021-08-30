@@ -157,4 +157,26 @@ public class LinkedList<E>  {
         }
         return false;
     }
+
+    public E peekFirst(){
+        if(head == null){
+            return null;
+        }
+        return head.data;
+    }
+
+    public E peekLast(){
+        if(tail == null){
+            return null;
+        }
+
+        /*Node<E> tmp = head;
+        while (null != tmp.next){
+            tmp = tmp.next;
+        }
+        return tmp.data;*/
+
+        return tail.data;
+    }
+
 }
