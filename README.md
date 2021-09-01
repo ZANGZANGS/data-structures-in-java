@@ -10,6 +10,7 @@
   - [remove](https://github.com/ZANGZANGS/data-structures-in-java/commit/d229c01cc470d7fa6b4aeaaa06b987412f022902)
   - [contains](https://github.com/ZANGZANGS/data-structures-in-java/commit/88c683eaee8dff27eb76e399f0e5ffa43a5e5c2b)
   - [peek](https://github.com/ZANGZANGS/data-structures-in-java/commit/9220dae5d6c1d5efd8e007d965ed90670bb337a1)
+  - [Iterator](https://github.com/ZANGZANGS/data-structures-in-java/commit/8a4d623f21cffdc56c236cc92153d22e7ae047c3)
 - 🔥 스택과 큐 
 - 🔥 해시(Hash)
 - 🔥 힙(Heap)
