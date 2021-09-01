@@ -1,6 +1,35 @@
 package data.structure.linkedlist;
 
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+
 public class LinkedList<E>  {
+
+    class IteratorHelper implements Iterator<E>{
+
+        Node<E> index;
+
+        public IteratorHelper(){
+            index = head;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index != null;
+        }
+
+        @Override
+        public E next() {
+            if(!hasNext()){
+                throw new NoSuchElementException();
+            }
+            E val = index.data;
+            index = index.next;
+            return val;
+        }
+
+    }
 
     class Node<E> {
         private E data;
