@@ -36,6 +36,33 @@ public class Hash<K, V> implements HashInterface{
         numElements = 0;
     }
 
+    public double loadFactor(){
+        return (double)numElements/tableSize;
+    }
+
+    public void resize(int size){
+
+    }
+
+    public boolean add(K key, V value){
+
+        if( loadFactor() >maxLoadFactor){
+          resize(tableSize*2);
+        }
+
+        HashElement<K,V> he = new HashElement<>(key, value);
+
+        int hashval = key.hashCode();
+        hashval = hashval & 0x7fffffff;
+        hashval = hashval % tableSize;
+
+        hashArray[hashval].add(he);
+        numElements++;
+        return true;
+    }
+
+   
+
 
 
 }
