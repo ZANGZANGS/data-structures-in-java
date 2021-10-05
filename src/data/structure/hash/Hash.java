@@ -40,7 +40,31 @@ public class Hash<K, V> implements HashInterface{
         return (double)numElements/tableSize;
     }
 
-    public void resize(int size){
+    public void resize(int newSize){
+
+        LinkedList<HashElement<K,V>>[] new_array =(LinkedList<HashElement<K,V>>[]) new LinkedList[newSize];
+
+        for (int i = 0; i < newSize; i++) {
+            new_array[i] = new LinkedList<HashElement<K,V>>();
+
+        }
+
+        for (LinkedList<HashElement<K,V>> linkedList: hashArray) {
+
+            for (HashElement<K,V> he :linkedList) {
+                K key = he.key;
+                V value = he.value;
+                HashElement<K,V> new_he = new HashElement<>(key, value);
+                int hashVal = (key.hashCode() & 0x7fffffff %newSize);
+
+                new_array[hashVal].add(new_he);
+
+            }
+        }
+
+        hashArray = new_array;
+        tableSize = newSize;
+
 
     }
 
