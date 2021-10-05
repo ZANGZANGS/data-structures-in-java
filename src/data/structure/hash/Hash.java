@@ -71,6 +71,19 @@ public class Hash<K, V> implements HashInterface{
         return true;
     }
 
+    public V getValue(K key){
+        int hashval = key.hashCode()&0x7fffffff % tableSize;
+        for (LinkedList<HashElement<K, V>> linkedList: hashArray) {
+
+            for (HashElement<K,V> he: linkedList) {
+                if( ((Comparable<K>)key).compareTo(he.key) == 0 ){
+                    return he.value;
+                }
+            }
+        }
+
+        return null;
+    }
 
 
 
