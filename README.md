@@ -13,6 +13,13 @@
   - [Iterator](https://github.com/ZANGZANGS/data-structures-in-java/commit/8a4d623f21cffdc56c236cc92153d22e7ae047c3)
 - 🔥 스택과 큐 
 - 🔥 해시(Hash)
+  - 👉 [해시 설명 보기!](https://zangzangs.tistory.com/123)
+  - [constructor](https://github.com/ZANGZANGS/data-structures-in-java/commit/16cded026b91dd248c113369245b1fbf67f1e7c2)
+  - [add](https://github.com/ZANGZANGS/data-structures-in-java/commit/5b619bde185c3f6a15a7947ed50c540fe00bd78f)
+  - [remove](https://github.com/ZANGZANGS/data-structures-in-java/commit/ed6916c6e9304ccea83f6fcbf3572b1b170e20f6)
+  - [getValue](https://github.com/ZANGZANGS/data-structures-in-java/commit/e2a2ccc085c11a8007f15ab7c6eb55794e215255)
+  - [resize](https://github.com/ZANGZANGS/data-structures-in-java/commit/1e633ebda19b3f95c76bcebe6bf6b7d754af01b3)
+  - [iterator](https://github.com/ZANGZANGS/data-structures-in-java/commit/6b036a7a4f536c134ea3d5b9e2d36b7dd1fa9bf3)
 - 🔥 힙(Heap)
 - 🔥 트리(Tree)
   - AVL
