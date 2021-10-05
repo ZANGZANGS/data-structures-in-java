@@ -25,4 +25,17 @@ public class Hash<K, V> implements HashInterface{
     double maxLoadFactor;
     LinkedList<HashElement<K,V>>[] hashArray;
 
+    public Hash(int tableSize){
+        this.tableSize = tableSize;
+        hashArray = (LinkedList<HashElement<K,V>>[]) new LinkedList[tableSize];
+
+        for (int i = 0; i < tableSize; i++) {
+            hashArray[i] = new LinkedList<HashElement<K,V>>();
+        }
+        maxLoadFactor = 0.75;
+        numElements = 0;
+    }
+
+
+
 }
