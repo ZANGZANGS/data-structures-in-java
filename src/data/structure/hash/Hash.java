@@ -61,7 +61,16 @@ public class Hash<K, V> implements HashInterface{
         return true;
     }
 
-   
+    public boolean remove(HashElement he){
+        int hashval = he.key.hashCode();
+        hashval = hashval & 0x7fffffff;
+        hashval = hashval % tableSize;
+
+        hashArray[hashval].remove(he);
+        numElements--;
+        return true;
+    }
+
 
 
 
