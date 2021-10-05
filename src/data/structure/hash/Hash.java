@@ -1,5 +1,6 @@
 package data.structure.hash;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Hash<K, V> implements HashInterface{
@@ -109,6 +110,40 @@ public class Hash<K, V> implements HashInterface{
         return null;
     }
 
+    class IteratorHelper <T> implements Iterator<T>{
+
+        T[] keys;
+        int position;
+
+        //constructor
+        public IteratorHelper(){
+            keys = (T[]) new Object[numElements];
+            int p = 0;
+            for (int i = 0; i < tableSize; i++) {
+                LinkedList<HashElement<K,V>> list = hashArray[i];
+
+                for (HashElement<K,V> he: list) {
+                    keys[p++] = (T)he.key;
+                }
+            }
+            position = 0;
+
+        }
+
+        @Override
+        public boolean hasNext() {
+            return position < keys.length;
+        }
+
+        @Override
+        public T next() {
+            if(!hasNext()){
+                return null;
+            }else{
+                return keys[position];
+            }
+        }
+    }
 
 
 }
