@@ -74,4 +74,32 @@ public class Tree<E> {
 
         return contains(obj, node.left);
     }
+
+    //Rotation
+    // grand parent > parent > child node
+    // input parameter is grand parent!!
+    public Node<E> leftRotate(Node<E> node){
+        Node<E> tmp = node.right;
+        node.right = tmp.left;
+        tmp.left = node;
+        return tmp;
+    }
+
+    public Node<E> rightRotate(Node<E> node){
+        Node<E> tmp = node.left;
+        node.left = tmp.right;
+        tmp.right = node;
+        return tmp;
+    }
+
+    //헷갈린다ㅏㅏ
+    public Node<E> rightLeftRotate(Node<E> node){
+        node.right = rightRotate(node.right);
+        return leftRotate(node);
+    }
+
+    public Node<E> ㅣeftㄲightRotate(Node<E> node){
+        node.left = leftRotate(node.left);
+        return rightLeftRotate(node);
+    }
 }
