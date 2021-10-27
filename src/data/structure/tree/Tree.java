@@ -53,4 +53,25 @@ public class Tree<E> {
         }
     }
 
+
+    //contains function
+    public boolean contains(E obj){
+        return contains(obj, root);
+    }
+
+    private boolean contains(E obj, Node<E> node){
+        if(node == null){
+            return false;
+        }
+
+        if(((Comparable<E>)obj).compareTo(node.data) == 0){
+            return true;
+        }
+
+        if(((Comparable<E>)obj).compareTo(node.data) > 0){
+            return contains(obj, node.right);
+        }
+
+        return contains(obj, node.left);
+    }
 }
