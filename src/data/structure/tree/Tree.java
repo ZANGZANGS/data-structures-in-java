@@ -21,7 +21,7 @@ public class Tree<E> {
 
 
     //add function
-    public void add(E obj, Node<E> node){
+    private void add(E obj, Node<E> node){
 
         if(((Comparable<E>)obj).compareTo(node.data)>0){
             //go to right
@@ -44,7 +44,7 @@ public class Tree<E> {
 
     }
 
-    public  void add(E obj){
+    public void add(E obj){
         if(null == root){
             root = new Node<E>(obj);
         }else{
@@ -52,4 +52,5 @@ public class Tree<E> {
             currentSize++;
         }
     }
+
 }
